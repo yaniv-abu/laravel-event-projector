@@ -79,6 +79,7 @@ class EventProjectorServiceProvider extends ServiceProvider
         $this->app->bind('command.event-projector:reset', ResetCommand::class);
         $this->app->bind('command.event-projector:rebuild', RebuildCommand::class);
         $this->app->bind('command.event-projector:replay', ReplayCommand::class);
+        $this->app->bind('command.event-projector:queued-projectors-listener', QueuedProjectorsListener::class);
 
         $this->app->bind('command.make:projector', MakeProjectorCommand::class);
         $this->app->bind('command.make:reactor', MakeReactorCommand::class);
@@ -89,6 +90,7 @@ class EventProjectorServiceProvider extends ServiceProvider
             'command.event-projector:reset',
             'command.event-projector:rebuild',
             'command.event-projector:replay',
+            'command.event-projector:queued-projectors-listener',
 
             'command.make:projector',
             'command.make:reactor',
